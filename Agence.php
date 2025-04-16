@@ -29,10 +29,11 @@ Class Agence{
     
     public function faireReservation(Client $client, Vehicule $v, DateTime $dateDebut, int $nbJours): Reservation{
     	$resrvation = new Reservation($v, $client ,$dateDebut, $nbJours);
-        if($v)
-        $resrvation->confirmer();
-
-        
+        if($v->rechercherVehiculeDisponible($v->getType()) == 'disponible'){
+            $resrvation->confirmer();
+        }
+        $resrvation->annuler();
+                
     }
     
 }

@@ -22,6 +22,6 @@ class Voiture extends Vehicule {
         if($resrvation->getStatut() == 'confirmer'){
             return $resrvation;
         }
-        return 
+        return null;
     }
 }
